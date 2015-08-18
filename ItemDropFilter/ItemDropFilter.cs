@@ -15,7 +15,7 @@ namespace ItemDropFilter
     {
        
         public override Version Version
-        {   get { return new Version(1, 0); }   }
+        {   get { return new Version(1, 1); }   }
 
         public override string Author
         {   get { return "Tygra"; } }
@@ -51,13 +51,12 @@ namespace ItemDropFilter
             if (args.MsgID == PacketTypes.ItemDrop)
             {
                 TSPlayer player = TShock.Players[args.Msg.whoAmI];
-                if (!player.Group.HasPermission("geldar.dropban"))
+                if (!player.Group.HasPermission("geldar.admin"))
                     {
                         args.Handled = true;
-                        player.SendErrorMessage("You are not allowed to drop items under level 30.");
-                        player.SendErrorMessage("Rebind your drop key to avoid the destruction of more items");
-                        player.SendErrorMessage("Check the rules to know what items are allowed to be dropped");
-                        player.SendErrorMessage("www.forum.geldar.net");
+                        player.SendErrorMessage("You are not allowed to drop items on the server!");
+                        player.SendErrorMessage("Rebind your drop key to avoid the destruction of more items.");
+                        player.SendErrorMessage("We will not refund any lost items");
                     }
             }
         }
