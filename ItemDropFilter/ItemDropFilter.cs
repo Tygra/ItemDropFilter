@@ -45,25 +45,6 @@ namespace ItemDropFilter
         }
         private void OnGetData(GetDataEventArgs args)
         {
-            if ((int)args.MsgID == 21)
-            {
-                TSPlayer tsPlayer = TShock.Players[args.Msg.whoAmI];
-                using (MemoryStream memoryStream = new MemoryStream(args.Msg.readBuffer, args.
-                    Index, args.Length))
-                {
-                    using (BinaryReader binaryReader = new BinaryReader(memoryStream, Encoding.UTF8, true))
-                    {
-                        int num = (int)binaryReader.ReadInt16();
-                        if (num == 400)
-                        {
-                            Item itemById = TShock.Utils.GetItemById(num);
-                        }
-
-                    }
-                }
-            }
-
-
             if (args.Handled)
                 return;
 
