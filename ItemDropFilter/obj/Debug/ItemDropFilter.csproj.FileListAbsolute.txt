@@ -1,0 +1,12 @@
+C:\Users\tygra\Desktop\Plugins\ItemDropFilter\ItemDropFilter\bin\Debug\ItemDropFilter.dll
+C:\Users\tygra\Desktop\Plugins\ItemDropFilter\ItemDropFilter\bin\Debug\ItemDropFilter.pdb
+C:\Users\tygra\Desktop\Plugins\ItemDropFilter\ItemDropFilter\bin\Debug\TerrariaServer.exe
+C:\Users\tygra\Desktop\Plugins\ItemDropFilter\ItemDropFilter\bin\Debug\TShockAPI.dll
+C:\Users\tygra\Desktop\Plugins\ItemDropFilter\ItemDropFilter\bin\Debug\Newtonsoft.Json.dll
+C:\Users\tygra\Desktop\Plugins\ItemDropFilter\ItemDropFilter\bin\Debug\MySql.Data.dll
+C:\Users\tygra\Desktop\Plugins\ItemDropFilter\ItemDropFilter\bin\Debug\HttpServer.dll
+C:\Users\tygra\Desktop\Plugins\ItemDropFilter\ItemDropFilter\bin\Debug\BCrypt.Net.dll
+C:\Users\tygra\Desktop\Plugins\ItemDropFilter\ItemDropFilter\bin\Debug\Mono.Data.Sqlite.dll
+C:\Users\tygra\Desktop\Plugins\ItemDropFilter\ItemDropFilter\obj\Debug\ItemDropFilter.csprojResolveAssemblyReference.cache
+C:\Users\tygra\Desktop\Plugins\ItemDropFilter\ItemDropFilter\obj\Debug\ItemDropFilter.dll
+C:\Users\tygra\Desktop\Plugins\ItemDropFilter\ItemDropFilter\obj\Debug\ItemDropFilter.pdb
