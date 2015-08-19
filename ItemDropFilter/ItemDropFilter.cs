@@ -26,11 +26,16 @@ namespace ItemDropFilter
         public override string Description
         {   get { return "Banning item drops mapwide."; }   }
 
+        public override void Initialize()
+        {
+            ServerApi.Hooks.NetGetData.Register(this, OnGetData);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
+            {
                 ServerApi.Hooks.NetGetData.Deregister(this, OnGetData);
-
+            }
             base.Dispose(disposing);
         }
 
@@ -38,26 +43,23 @@ namespace ItemDropFilter
             : base(game)
         {
         }
-        public override void Initialize()
+        
+        private void OnGetData(GetDataEventArgs e)
         {
-
-            ServerApi.Hooks.NetGetData.Register(this, OnGetData);
-        }
-        private void OnGetData(GetDataEventArgs args)
-        {
-            if (args.Handled)
-                return;
-
-            if (args.MsgID == PacketTypes.ItemDrop)
+            if (e.MsgID == PacketTypes.ItemDrop)
             {
-                TSPlayer player = TShock.Players[args.Msg.whoAmI];
-                if (!player.Group.HasPermission("geldar.admin"))
+                if (!e.Handled)
+                {
+                    TSPlayer player = TShock.Players[e.Msg.whoAmI];
+                    if (!player.Group.HasPermission("geldar.admin"))
                     {
-                        args.Handled = true;
                         player.SendErrorMessage("You are not allowed to drop items on the server!");
                         player.SendErrorMessage("Rebind your drop key to avoid the destruction of more items.");
                         player.SendErrorMessage("We will not refund any lost items");
                     }
+                    e.Handled = true;
+                    return;
+                }
             }
         }
     }
